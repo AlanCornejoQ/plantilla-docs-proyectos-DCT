@@ -2,7 +2,7 @@
 \ProvidesClass{catolica_proyectos}[2026/03/18 Clase DCT UCB]
 
 % --- Herencia ---
-\LoadClass[12pt,letterpaper,oneside]{report}
+\LoadClass[12pt,letterpaper,oneside]{article}
 
 % --- Paquetes ---
 \RequirePackage[utf8]{inputenc}
@@ -13,6 +13,15 @@
 \RequirePackage{titlesec}
 \RequirePackage{etoolbox}
 \RequirePackage{parskip}
+
+% --- Bibliografía APA 7ma ---
+\RequirePackage{csquotes}
+\RequirePackage[
+backend=biber,
+style=apa,
+sortcites=true,
+sorting=nyt
+]{biblatex}
 
 % --- Configuración de Márgenes Base ---
 \geometry{
@@ -50,7 +59,7 @@
 		\centering
 		
 		% Logo UCB
-		\includegraphics[height=3cm]{Figuras/ucb-logo.png}\par
+		\includegraphics[height=5cm]{Figuras/ucb-logo.png}\par
 		\vspace{1cm}
 		
 		{\scshape\Large Universidad Católica Boliviana "San Pablo"\par}
@@ -59,20 +68,20 @@
 		\vspace{0.3cm}
 		{\scshape\large Ingeniería \@carrera \par}
 		
-		\vspace{2cm}
+		\vspace{1.5cm}
 		{\huge\bfseries \@titulo \par}
 		
 		\vspace{1.5cm}
 		
 		% --- Lógica robusta para el logo de carrera ---
 		\ifdefstring{\@carrera}{Mecatrónica}{
-			\includegraphics[width=4cm]{Figuras/mec.png}\par
+			\includegraphics[width=5cm]{Figuras/mec.png}\par
 		}{
 			\ifdefstring{\@carrera}{Sistemas}{
-				\includegraphics[width=4cm]{Figuras/sis.png}\par
+				\includegraphics[width=5cm]{Figuras/sis.png}\par
 			}{
 				% Si no es ninguna de las anteriores, por defecto es Biomédica
-				\includegraphics[width=4cm]{Figuras/bmd.png}\par
+				\includegraphics[width=5cm]{Figuras/bmd.png}\par
 			}
 		}
 		
